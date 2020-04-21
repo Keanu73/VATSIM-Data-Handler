@@ -2,10 +2,12 @@
   "name": "vatsim-data-handler",
   "version": "4.0.0",
   "description": "A data handler for the VATSIM status system",
-  "main": "src/methods.js",
+  "main": "dist/methods.js",
   "scripts": {
     "test": "mocha --reporter spec",
-    "cover": "node node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/* --require @babel/register --exit"
+    "cover": "node node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/* --require @babel/register --exit",
+    "dev": "nodemon src/methods.ts",
+    "build": "tsc -p ."
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,8 @@
     "@babel/core": "^7.8.6",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/register": "^7.8.6",
+    "@types/node": "^13.13.1",
+    "@types/request": "^2.48.4",
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
@@ -35,7 +39,9 @@
     "istanbul": "^1.1.0-alpha.1",
     "jshint": "^2.10.2",
     "mocha": "^6.2.1",
-    "nodemon": "^1.19.3"
+    "nodemon": "^1.19.3",
+    "ts-node": "^8.9.0",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "eslint": "^6.8.0",
